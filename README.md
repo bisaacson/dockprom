@@ -79,7 +79,7 @@ You can find it in `grafana/dashboards/docker_host.json`, at line 480 :
 
       "expr": "sum(node_filesystem_free_bytes{fstype=\"btrfs\"})",
 
-I work on BTRFS, so i need to change `aufs` to `btrfs`.
+"I work on BTRFS, so i need to change `xfs` to `btrfs`."
 
 You can find right value for your system in Prometheus `http://<host-ip>:9090` launching this request :
 
@@ -179,7 +179,7 @@ Trigger an alert if the Docker host storage is almost full:
 
 ```yaml
 - alert: high_storage_load
-    expr: (node_filesystem_size_bytes{fstype="aufs"} - node_filesystem_free_bytes{fstype="aufs"}) / node_filesystem_size_bytes{fstype="aufs"}  * 100 > 85
+    expr: (node_filesystem_size_bytes{fstype="xfs"} - node_filesystem_free_bytes{fstype="xfs"}) / node_filesystem_size_bytes{fstype="xfs"}  * 100 > 85
     for: 30s
     labels:
       severity: warning
