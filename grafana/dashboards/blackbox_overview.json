@@ -1,4 +1,4 @@
-{
+{"dashboard": {
     "annotations": {
       "list": [
         {
@@ -1164,4 +1164,4 @@
     "title": "Prometheus Blackbox",
     "uid": "xtkCtBkiz2",
     "version": 1
-  }
+  }}
